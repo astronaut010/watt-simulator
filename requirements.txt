@@ -1,0 +1,8 @@
+flask>=2.2.0
+flask-cors
+pytesseract
+opencv-python-headless
+pillow
+numpy
+reportlab
+gunicorn
