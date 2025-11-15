@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WattCompare</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>⚡ WattCompare</h1>
+      <div class="controls">
+        <button id="refresh">Refresh List</button>
+        <button id="exportPdf">Download PDF Report</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="leftcard">
+        <video id="video" autoplay playsinline></video>
+        <div class="buttons">
+          <button id="captureBtn">📸 Scan Label</button>
+          <label class="filelabel">Upload image
+            <input type="file" id="upload" accept="image/*" />
+          </label>
+        </div>
+        <div class="ocrresult">
+          <div>Detected AEC (kWh/year): <strong id="detected">—</strong></div>
+          <pre id="raw" class="raw"></pre>
+        </div>
+      </section>
+
+      <section class="rightcard">
+        <h2>Save Appliance</h2>
+        <label>Name <input id="name" /></label>
+        <label>Price <input id="price" type="number" /></label>
+        <label>Electricity Rate (per kWh) <input id="rate" type="number" step="0.01" /></label>
+        <label>Manual AEC (kWh/year) <input id="manualAec" /></label>
+        <button id="save">Save Appliance</button>
+
+        <hr/>
+
+        <h3>Saved Appliances</h3>
+        <div id="list" class="list"></div>
+
+        <div class="compare-controls">
+          <button id="compareBtn">Compare Selected</button>
+        </div>
+
+        <div id="compareResult" class="compareResult"></div>
+      </section>
+    </main>
+
+    <canvas id="canvas" style="display:none"></canvas>
+    <footer>WattCompare • Backend served same origin</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
